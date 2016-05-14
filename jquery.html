@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<script src = "jquery-2.2.3.js"></script>
+
+
+	<h1>Hello</h1>
+	
+	<div class="welcome">
+		<h2>Welcome to the show!</h2>
+		<h3>Click anywhere to begin<h3>
+	</div>
+
+	<div class="beginning"></div>
+
+	<script>
+		$(document).ready(
+			function(){
+				$(".welcome").hide()
+
+				$("h1").css({
+					textAlign: "center",
+					color: "red"
+				})
+				$("h1").fadeOut(2000, function(){
+
+
+					$(".welcome").css({
+						textAlign: "center",
+						color: "green",
+						backgroundColor: "coral",
+						height: "500px",
+						width: "500px",
+						marginLeft: "300px",
+						marginTop: "75px",
+						paddingTop: "100px"
+						
+					})
+					$(".welcome").fadeIn(1000, function(){
+						$(".welcome").click(function(){
+							$(".welcome").hide();
+							$(".beginning").animate({
+								height: "500px",
+								width: "500px"
+							}, 1000, function() {
+									$(".beginning").animate({
+										marginLeft: "350px",
+										borderRadius: "2000px",
+									}, 1000, function() {
+										$(".beginning").animate({
+										height: "1px",
+										width: "1px",
+										marginTop: "150px",
+										
+									
+
+									})
+								
+								})
+							})
+							$(".beginning").css("background-color", "#0000ff");
+						})
+					})
+
+				});
+				
+			});
+
+
+
+			
+		
+
+
+
+	</script>
+
+</body>
+</html>
